@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultracel - Soluciones y Recolección a Domicilio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'azul-oscuro': '#005187',
+                        'azul-medio': '#4d82bc',
+                        'azul-claro': '#84b6f4',
+                        'azul-muy-claro': '#c4dafa',
+                        'blanco-azulado': '#fcffff',
+                    },
+                    fontFamily: {
+                        'sans': ['Readex Pro', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #f0f5fa; }
+        .status-badge { padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; }
+        .hidden-section { display: none; }
+        .chat-message { max-width: 80%; }
+    </style>
+</head>
+<body class="text-azul-oscuro">
+
+    <!-- =========== VISTA PÁGINA DE INICIO (NO LOGUEADO) =========== -->
+    <div id="landing-view">
+        <!-- BARRA DE NAVEGACIÓN INICIAL -->
+        <header class="bg-blanco-azulado/80 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+            <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="#">
+                <img src="images/logo.png" alt="Logo de Ultracel" class="h-12">
+                </a>
+                <div class="hidden md:flex items-center space-x-8"><a href="#servicios" class="hover:text-azul-medio transition-colors">Servicios</a><a href="#como-funciona" class="hover:text-azul-medio transition-colors">Cómo Funciona</a><a href="#contacto" class="hover:text-azul-medio transition-colors">Contacto</a></div>
+                <div class="flex items-center space-x-2"><a href="#" id="login-btn" class="px-4 py-2 text-azul-oscuro rounded-md hover:bg-azul-muy-claro transition-colors">Iniciar Sesión</a><a href="#" id="register-btn" class="px-4 py-2 bg-azul-medio text-white rounded-md hover:bg-azul-oscuro transition-colors">Registrarse</a></div>
+            </nav>
+        </header>
+        <!-- CONTENIDO DE LA PÁGINA DE INICIO -->
+        <main><section class="py-20 md:py-32 bg-blanco-azulado"><div class="container mx-auto px-6 text-center"><h1 class="text-4xl md:text-6xl font-bold text-azul-oscuro leading-tight">Tus equipos vuelven a la vida.<br><span class="text-azul-medio">Nosotros lo recogemos por ti.</span></h1><p class="mt-6 text-lg max-w-2xl mx-auto text-gray-600">Olvídate de las complicaciones. Ofrecemos un servicio de diagnóstico y reparación profesional con recolección y entrega en la puerta de tu casa.</p><div class="mt-8"><a href="#" class="px-8 py-4 bg-azul-oscuro text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-azul-medio transition-transform transform hover:scale-105">Solicitar una Recolección</a></div></div></section><section id="servicios" class="py-20 bg-azul-muy-claro/40"><div class="container mx-auto px-6"><div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold">Nuestros Servicios de Reparación</h2><p class="mt-4 text-gray-600 max-w-xl mx-auto">Reparamos una amplia gama de dispositivos electrónicos con componentes de alta calidad.</p></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"><div class="bg-blanco-azulado p-8 rounded-xl shadow-md text-center hover:shadow-xl transition-shadow"><div class="text-5xl text-azul-claro mb-4">💻</div><h3 class="text-2xl font-bold mb-2">Laptops y PCs</h3><p class="text-gray-600">Desde problemas de software hasta reemplazo de componentes como pantallas, teclados y baterías.</p></div><div class="bg-blanco-azulado p-8 rounded-xl shadow-md text-center hover:shadow-xl transition-shadow"><div class="text-5xl text-azul-claro mb-4">📱</div><h3 class="text-2xl font-bold mb-2">Smartphones y Tablets</h3><p class="text-gray-600">Reparamos pantallas rotas, cambiamos baterías agotadas y solucionamos problemas en puertos de carga.</p></div><div class="bg-blanco-azulado p-8 rounded-xl shadow-md text-center hover:shadow-xl transition-shadow"><div class="text-5xl text-azul-claro mb-4">🎮</div><h3 class="text-2xl font-bold mb-2">Consolas de Videojuegos</h3><p class="text-gray-600">Solucionamos problemas de sobrecalentamiento, fallos en la lectura de discos y errores de sistema.</p></div></div></div></section><section id="como-funciona" class="py-20 bg-blanco-azulado"><div class="container mx-auto px-6"><div class="text-center mb-12"><h2 class="text-3xl md:text-4xl font-bold">Nuestro Proceso es Sencillo</h2><p class="mt-4 text-gray-600 max-w-xl mx-auto">En solo 4 pasos, tu dispositivo estará reparado y de vuelta contigo.</p></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center"><div class="p-4"><div class="flex items-center justify-center h-20 w-20 mx-auto mb-4 bg-azul-claro text-white text-3xl font-bold rounded-full">1</div><h3 class="text-xl font-bold mb-2">Crea tu Cuenta y Solicita</h3><p class="text-gray-600">Regístrate, describe el problema y agenda una recolección.</p></div><div class="p-4"><div class="flex items-center justify-center h-20 w-20 mx-auto mb-4 bg-azul-claro text-white text-3xl font-bold rounded-full">2</div><h3 class="text-xl font-bold mb-2">Recolectamos tu Equipo</h3><p class="text-gray-600">Uno de nuestros técnicos pasará a tu domicilio en el horario acordado.</p></div><div class="p-4"><div class="flex items-center justify-center h-20 w-20 mx-auto mb-4 bg-azul-claro text-white text-3xl font-bold rounded-full">3</div><h3 class="text-xl font-bold mb-2">Diagnosticamos y Reparamos</h3><p class="text-gray-600">Te contactaremos por el chat para confirmar el diagnóstico y proceder.</p></div><div class="p-4"><div class="flex items-center justify-center h-20 w-20 mx-auto mb-4 bg-azul-claro text-white text-3xl font-bold rounded-full">4</div><h3 class="text-xl font-bold mb-2">Entregamos en tu Puerta</h3><p class="text-gray-600">Una vez listo y pagado, te lo llevamos de vuelta, funcional.</p></div></div></div></section></main>
+        <!-- FOOTER DE LA PÁGINA DE INICIO -->
+        <footer id="contacto" class="bg-azul-oscuro text-blanco-azulado/80 pt-16 pb-8"><div class="container mx-auto px-6"><div class="grid grid-cols-1 md:grid-cols-3 gap-8"><div><h3 class="text-xl font-bold text-white mb-4">Ultracel</h3><p>Comprometidos con dar una segunda vida a tus dispositivos.</p></div><div><h3 class="text-xl font-bold text-white mb-4">Navegación</h3><ul class="space-y-2"><li><a href="#servicios" class="hover:text-white">Servicios</a></li><li><a href="#como-funciona" class="hover:text-white">Cómo Funciona</a></li></ul></div><div><h3 class="text-xl font-bold text-white mb-4">Contacto</h3><p>Email: cletogamaliel@gmail.com</p><p>Teléfono: +52 7293736998</p></div></div><div class="mt-12 border-t border-azul-medio/30 pt-6 text-center text-sm"><p>&copy; 2025 Ultracel. Todos los derechos reservados.</p></div></div></footer>
+    </div>
+
+    <!-- =========== VISTA PANEL DE USUARIO (DASHBOARD) =========== -->
+    <div id="dashboard-view" class="hidden-section">
+        <header class="bg-blanco-azulado/80 backdrop-blur-sm shadow-sm sticky top-0 z-50"><nav class="container mx-auto px-6 py-4 flex justify-between items-center"><a href="#"><img src="https://placehold.co/140x40/005187/ffffff?text=Ultracel" alt="Logo de Ultracel" class="h-10"></a><div class="flex items-center space-x-4"><span class="hidden sm:inline">¡Hola, Carlos!</span><a href="#" class="px-4 py-2 text-azul-oscuro rounded-md hover:bg-azul-muy-claro transition-colors font-semibold">Mis Solicitudes</a><a href="#" id="logout-btn" class="px-4 py-2 bg-azul-oscuro text-white rounded-md hover:bg-azul-medio transition-colors">Cerrar Sesión</a></div></nav></header>
+        <main class="container mx-auto p-4 md:p-8"><div class="flex flex-col md:flex-row justify-between items-center mb-8"><h1 class="text-3xl md:text-4xl font-bold">Mi Panel de Usuario</h1><button class="mt-4 md:mt-0 px-6 py-3 bg-azul-medio text-white font-bold rounded-lg shadow-lg hover:bg-azul-oscuro transition-transform transform hover:scale-105">+ Nueva Solicitud de Reparación</button></div><div class="bg-blanco-azulado rounded-xl shadow-md p-6"><h2 class="text-2xl font-bold mb-6">Mis Solicitudes</h2><div class="space-y-4"><div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex flex-col md:flex-row items-center justify-between gap-4"><div class="flex items-center gap-4"><span class="text-3xl">💻</span><div><p class="font-bold">Laptop HP Pavilion 15"</p><p class="text-sm text-gray-500">ID: UL-2025-001</p></div></div><div class="flex items-center gap-4"><span class="status-badge bg-yellow-200 text-yellow-800">En Diagnóstico</span><a href="#" class="view-detail-btn font-semibold text-azul-medio hover:underline">Ver Detalles</a></div></div><div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex flex-col md:flex-row items-center justify-between gap-4"><div class="flex items-center gap-4"><span class="text-3xl">📱</span><div><p class="font-bold">iPhone 13 Pro</p><p class="text-sm text-gray-500">ID: UL-2025-002</p></div></div><div class="flex items-center gap-4"><span class="status-badge bg-blue-200 text-blue-800">Esperando Aprobación</span><a href="#" class="view-detail-btn font-semibold text-azul-medio hover:underline">Ver Detalles</a></div></div><div class="bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex flex-col md:flex-row items-center justify-between gap-4"><div class="flex items-center gap-4"><span class="text-3xl">🎮</span><div><p class="font-bold">PlayStation 5</p><p class="text-sm text-gray-500">ID: UL-2024-198</p></div></div><div class="flex items-center gap-4"><span class="status-badge bg-green-200 text-green-800">Completado</span><a href="#" class="view-detail-btn font-semibold text-azul-medio hover:underline">Ver Detalles</a></div></div></div></div></main>
+        <footer class="bg-azul-oscuro text-blanco-azulado/80 pt-16 pb-8 mt-16"><div class="container mx-auto px-6 text-center text-sm"><p>&copy; 2025 Ultracel. Todos los derechos reservados.</p></div></footer>
+    </div>
+    
+    <!-- =========== VISTA DETALLE DE SOLICITUD (CHAT Y PAGO) =========== -->
+    <div id="detail-view" class="hidden-section">
+        <header class="bg-blanco-azulado/80 backdrop-blur-sm shadow-sm sticky top-0 z-50"><nav class="container mx-auto px-6 py-4 flex justify-between items-center"><a href="#"><img src="https://placehold.co/140x40/005187/ffffff?text=Ultracel" alt="Logo de Ultracel" class="h-10"></a><div class="flex items-center space-x-4"><a href="#" id="back-to-dashboard-btn" class="font-semibold text-azul-medio hover:underline">&larr; Volver al Panel</a><a href="#" id="logout-btn-detail" class="px-4 py-2 bg-azul-oscuro text-white rounded-md hover:bg-azul-medio transition-colors">Cerrar Sesión</a></div></nav></header>
+        <main class="container mx-auto p-4 md:p-8">
+            <h1 class="text-3xl md:text-4xl font-bold mb-8">Detalle de Solicitud: <span class="text-azul-medio">iPhone 13 Pro</span></h1>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Columna del Chat (ocupa 2 de 3 columnas en pantallas grandes) -->
+                <div class="lg:col-span-2 bg-blanco-azulado rounded-xl shadow-md p-6 flex flex-col">
+                    <h2 class="text-2xl font-bold mb-4">Chat con tu Técnico</h2>
+                    <div id="chat-box" class="flex-grow bg-white p-4 rounded-md h-96 overflow-y-auto space-y-4">
+                        <!-- Mensajes de ejemplo -->
+                        <div class="flex justify-start"><div class="chat-message bg-gray-200 text-gray-800 p-3 rounded-lg"><span>Hola Carlos, soy David, tu técnico. Ya recibimos tu iPhone, comenzaré el diagnóstico ahora mismo.</span></div></div>
+                        <div class="flex justify-end"><div class="chat-message bg-azul-medio text-white p-3 rounded-lg"><span>¡Perfecto David, muchas gracias! Quedo al pendiente.</span></div></div>
+                    </div>
+                    <div id="chat-form" class="mt-4 flex gap-2">
+                        <input type="text" id="chat-input" class="flex-grow w-full px-4 py-2 border border-azul-muy-claro rounded-md focus:ring-2 focus:ring-azul-claro focus:outline-none" placeholder="Escribe tu mensaje...">
+                        <button id="send-chat-btn" class="px-6 py-2 bg-azul-oscuro text-white font-bold rounded-md hover:bg-azul-medio transition-colors">Enviar</button>
+                    </div>
+                </div>
+
+                <!-- Columna de Estado y Pago -->
+                <div class="space-y-8">
+                    <div class="bg-blanco-azulado rounded-xl shadow-md p-6">
+                        <h2 class="text-2xl font-bold mb-4">Estado del Servicio</h2>
+                        <p class="mb-2"><strong class="w-24 inline-block">ID:</strong> UL-2025-002</p>
+                        <p class="mb-2"><strong class="w-24 inline-block">Equipo:</strong> iPhone 13 Pro</p>
+                        <p class="mb-4"><strong class="w-24 inline-block">Problema:</strong> Pantalla no enciende.</p>
+                        <div class="flex items-center gap-2"><strong>Estado:</strong><span class="status-badge bg-blue-200 text-blue-800">Esperando Aprobación</span></div>
+                    </div>
+                    <div class="bg-blanco-azulado rounded-xl shadow-md p-6">
+                        <h2 class="text-2xl font-bold mb-4">Cotización</h2>
+                        <div class="space-y-2 text-gray-700">
+                            <div class="flex justify-between"><p>Reemplazo de pantalla OLED</p><p class="font-semibold">$2,500.00</p></div>
+                            <div class="flex justify-between"><p>Mano de obra</p><p class="font-semibold">$500.00</p></div>
+                            <div class="border-t border-gray-300 my-2"></div>
+                            <div class="flex justify-between text-azul-oscuro text-lg font-bold"><p>Total (MXN)</p><p>$3,000.00</p></div>
+                        </div>
+                        <div class="mt-6 flex flex-col gap-3">
+                            <button class="w-full bg-green-500 text-white py-3 rounded-md font-bold hover:bg-green-600 transition-colors">Aprobar y Pagar</button>
+                            <button class="w-full bg-red-500 text-white py-2 rounded-md font-semibold hover:bg-red-600 transition-colors">Rechazar Cotización</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- =========== MODALES DE INICIO DE SESIÓN Y REGISTRO =========== -->
+    <div id="login-modal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+        <div class="bg-blanco-azulado rounded-lg shadow-xl w-full max-w-md p-8 relative">
+            <button id="close-login-modal" class="absolute top-4 right-4 text-2xl text-gray-500 hover:text-azul-oscuro">&times;</button>
+            <h2 class="text-2xl font-bold text-center text-azul-oscuro mb-6">Iniciar Sesión</h2>
+            <div id="login-form"><div class="mb-4"><label for="login-email" class="block text-sm font-semibold mb-2">Correo Electrónico</label><input type="email" id="login-email" class="w-full px-4 py-2 border border-azul-muy-claro rounded-md focus:ring-2 focus:ring-azul-claro focus:outline-none" placeholder="tu@email.com"></div><div class="mb-6"><label for="login-password" class="block text-sm font-semibold mb-2">Contraseña</label><input type="password" id="login-password" class="w-full px-4 py-2 border border-azul-muy-claro rounded-md focus:ring-2 focus:ring-azul-claro focus:outline-none" placeholder="••••••••"></div><button type="submit" id="submit-login-btn" class="w-full bg-azul-medio text-white py-3 rounded-md font-bold hover:bg-azul-oscuro transition-colors">Ingresar</button><p class="text-center text-sm mt-4">¿No tienes una cuenta? <a href="#" id="show-register-modal" class="font-semibold text-azul-medio hover:underline">Regístrate aquí</a></p></div>
+        </div>
+    </div>
+    <div id="register-modal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"><div class="bg-blanco-azulado rounded-lg shadow-xl w-full max-w-md p-8 relative"><button id="close-register-modal" class="absolute top-4 right-4 text-2xl text-gray-500 hover:text-azul-oscuro">&times;</button><h2 class="text-2xl font-bold text-center text-azul-oscuro mb-6">Crear una Cuenta</h2><form><div class="mb-4"><label for="register-name" class="block text-sm font-semibold mb-2">Nombre Completo</label><input type="text" id="register-name" class="w-full px-4 py-2 border border-azul-muy-claro rounded-md focus:ring-2 focus:ring-azul-claro focus:outline-none" placeholder="Tu Nombre Completo"></div><div class="mb-4"><label for="register-email" class="block text-sm font-semibold mb-2">Correo Electrónico</label><input type="email" id="register-email" class="w-full px-4 py-2 border border-azul-muy-claro rounded-md focus:ring-2 focus:ring-azul-claro focus:outline-none" placeholder="tu@email.com"></div><div class="mb-6"><label for="register-password" class="block text-sm font-semibold mb-2">Contraseña</slabel><input type="password" id="register-password" class="w-full px-4 py-2 border border-azul-muy-claro rounded-md focus:ring-2 focus:ring-azul-claro focus:outline-none" placeholder="Crea una contraseña segura"></div><button type="submit" class="w-full bg-azul-oscuro text-white py-3 rounded-md font-bold hover:bg-azul-medio transition-colors">Crear Cuenta</button><p class="text-center text-sm mt-4">¿Ya tienes una cuenta? <a href="#" id="show-login-modal" class="font-semibold text-azul-medio hover:underline">Inicia sesión</a></p></form></div></div>
+
+    <!-- =========== JAVASCRIPT UNIFICADO PARA TODA LA APP =========== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Vistas principales
+            const landingView = document.getElementById('landing-view');
+            const dashboardView = document.getElementById('dashboard-view');
+            const detailView = document.getElementById('detail-view');
+
+            // Lógica para Modales
+            const loginBtn = document.getElementById('login-btn');
+            const registerBtn = document.getElementById('register-btn');
+            const loginModal = document.getElementById('login-modal');
+            const registerModal = document.getElementById('register-modal');
+            const closeLoginModalBtn = document.getElementById('close-login-modal');
+            const closeRegisterModalBtn = document.getElementById('close-register-modal');
+            const showRegisterModalLink = document.getElementById('show-register-modal');
+            const showLoginModalLink = document.getElementById('show-login-modal');
+
+            function openModal(modal) { modal.classList.remove('hidden'); }
+            function closeModal(modal) { modal.classList.add('hidden'); }
+
+            loginBtn.addEventListener('click', (e) => { e.preventDefault(); openModal(loginModal); });
+            registerBtn.addEventListener('click', (e) => { e.preventDefault(); openModal(registerModal); });
+            closeLoginModalBtn.addEventListener('click', () => closeModal(loginModal));
+            closeRegisterModalBtn.addEventListener('click', () => closeModal(registerModal));
+            loginModal.addEventListener('click', (e) => { if (e.target === loginModal) closeModal(loginModal); });
+            registerModal.addEventListener('click', (e) => { if (e.target === registerModal) closeModal(registerModal); });
+            showRegisterModalLink.addEventListener('click', (e) => { e.preventDefault(); closeModal(loginModal); openModal(registerModal); });
+            showLoginModalLink.addEventListener('click', (e) => { e.preventDefault(); closeModal(registerModal); openModal(loginModal); });
+
+            // Lógica de Navegación entre vistas
+            const submitLoginBtn = document.getElementById('submit-login-btn');
+            const logoutBtn = document.getElementById('logout-btn');
+            const logoutBtnDetail = document.getElementById('logout-btn-detail');
+            const detailButtons = document.querySelectorAll('.view-detail-btn');
+            const backToDashboardBtn = document.getElementById('back-to-dashboard-btn');
+
+            function showDashboard() {
+                landingView.classList.add('hidden-section');
+                detailView.classList.add('hidden-section');
+                dashboardView.classList.remove('hidden-section');
+                closeModal(loginModal);
+            }
+
+            function showLandingPage() {
+                dashboardView.classList.add('hidden-section');
+                detailView.classList.add('hidden-section');
+                landingView.classList.remove('hidden-section');
+            }
+            
+            function showDetailView() {
+                dashboardView.classList.add('hidden-section');
+                detailView.classList.remove('hidden-section');
+            }
+
+            submitLoginBtn.addEventListener('click', (e) => { e.preventDefault(); showDashboard(); });
+            logoutBtn.addEventListener('click', (e) => { e.preventDefault(); showLandingPage(); });
+            logoutBtnDetail.addEventListener('click', (e) => { e.preventDefault(); showLandingPage(); });
+            
+            detailButtons.forEach(button => {
+                button.addEventListener('click', (e) => { e.preventDefault(); showDetailView(); });
+            });
+            backToDashboardBtn.addEventListener('click', (e) => { e.preventDefault(); showDashboard(); });
+
+            // Lógica del Chat (Simulación)
+            const chatBox = document.getElementById('chat-box');
+            const chatInput = document.getElementById('chat-input');
+            const sendChatBtn = document.getElementById('send-chat-btn');
+
+            function addMessage(message, sender) {
+                const messageWrapper = document.createElement('div');
+                const messageBubble = document.createElement('div');
+                messageBubble.classList.add('chat-message', 'p-3', 'rounded-lg');
+                messageBubble.textContent = message;
+
+                if (sender === 'user') {
+                    messageWrapper.classList.add('flex', 'justify-end');
+                    messageBubble.classList.add('bg-azul-medio', 'text-white');
+                } else {
+                    messageWrapper.classList.add('flex', 'justify-start');
+                    messageBubble.classList.add('bg-gray-200', 'text-gray-800');
+                }
+                
+                messageWrapper.appendChild(messageBubble);
+                chatBox.appendChild(messageWrapper);
+                chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll al último mensaje
+            }
+
+            sendChatBtn.addEventListener('click', () => {
+                const messageText = chatInput.value.trim();
+                if (messageText) {
+                    addMessage(messageText, 'user');
+                    chatInput.value = '';
+                    
+                    // Simular respuesta del técnico
+                    setTimeout(() => {
+                        addMessage('Entendido, lo revisaré. Te mantendré informado.', 'tech');
+                    }, 1500);
+                }
+            });
+             chatInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                  sendChatBtn.click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
